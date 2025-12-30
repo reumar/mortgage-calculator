@@ -7,7 +7,6 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
-
     return (mo,)
 
 
@@ -17,7 +16,6 @@ def _():
     import pandas as pd
     import numpy as np
     import altair as alt
-
     return alt, pd
 
 
@@ -59,7 +57,6 @@ def _(pd):
             )
 
         return pd.DataFrame(schedule)
-
     return (mortgage_schedule,)
 
 
@@ -153,6 +150,12 @@ def _(data, mo, mortgage_schedule):
         show_data_types=False,
         selection=None,
         freeze_columns_left=["Month"],
+        format_mapping={
+            "Payment": "{:,.2f} €".format,
+            "Interest": "{:,.2f} €".format,
+            "Principal": "{:,.2f} €".format,
+            "Remaining Balance": "{:,.2f} €".format,
+        }
     )
     return (df,)
 
