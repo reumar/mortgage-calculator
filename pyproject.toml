@@ -1,13 +1,18 @@
 [project]
-name = "mortgage"
-version = "0.1.0"
-description = "Add your description here"
+name = "mortgage-calculator"
+version = "0.0.1"
+description = "Fixed Rate Mortgage Calculator"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "altair>=6.0.0",
-    "great-tables>=0.20.0",
     "marimo>=0.18.4",
+    "numpy>=2.4.0",
     "pandas>=2.3.3",
     "pyarrow>=22.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.14.10",
 ]
